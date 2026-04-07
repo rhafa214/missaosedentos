@@ -152,37 +152,39 @@ a {
 .menu-overlay {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
+    right: -300px; /* Ele começa escondido 300px para a direita */
+    width: 300px;    /* Largura fixa do menu lateral */
     height: 100%;
-    background: rgba(0,0,0,0.95);
+    background: #0a0a0a; /* Fundo sólido para não confundir com o site */
     z-index: 2000;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.5s ease;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha os links no topo */
+     padding-top: 100px;         /* Espaço para o botão de fechar não cobrir os links */
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Animação suave de deslize */
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);   /* Sombra para dar profundidade */
 }
 
 .menu-overlay.active {
-    opacity: 1;
-    visibility: visible;
+    right: 0; /* Quando ativo, ele volta para a posição visível */
 }
 
 .menu-links {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    text-align: center;
+    gap: 20px;
+    text-align: left; /* Alinhamento à esquerda fica mais elegante em menus laterais */
+    padding-left: 40px;
 }
+
 
 .menu-link {
     font-family: var(--fonte-impacto);
-    font-size: clamp(2.5rem, 10vw, 4rem);
+    font-size: 1.8rem; /* Diminuímos de 4rem para 1.8rem para caber na lateral */
     color: var(--branco);
     text-decoration: none;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
+    transition: 0.3s;
 }
 
 .menu-link:hover {
@@ -191,9 +193,9 @@ a {
 
 .close-menu {
     position: absolute;
-    top: 40px;
-    right: 40px;
-    font-size: 2.5rem;
+    top: 30px;
+    left: 30px; /* Colocamos na esquerda do menu para facilitar o clique */
+    font-size: 2rem;
     color: var(--dourado);
     cursor: pointer;
 }
