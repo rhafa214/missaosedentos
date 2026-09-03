@@ -1,0 +1,6 @@
+{
+  "name": "Missão Sedentos",
+  "description": "Site oficial da Missão Sedentos com modo suspense para o próximo lançamento musical, contagem regressiva e discografia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

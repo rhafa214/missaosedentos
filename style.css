@@ -53,18 +53,23 @@ a {
 }
 
 /* ==========================================================================
-   2. HEADER & HERO (CAPA)
+   2. HEADER & HERO (ESTÉTICA INSTITUCIONAL & DETALHE EXPECTATIVA)
    ========================================================================== */
+
+/* --- HEADER / HERO --- */
 .hero {
     height: 100vh;
+    min-height: 650px;
     width: 100%;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/capa.jpeg');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.65)), url('img/capa.jpeg');
     background-size: cover;
     background-position: 92% 42%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    padding: 0 5%;
+    text-align: center;
 }
 
 .top-bar {
@@ -120,30 +125,167 @@ a {
     margin: 8px 0;
 }
 
+/* --- CONTEÚDO DO HERO (INSTITUCIONAL DOMINANTE) --- */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    max-width: 900px;
+    width: 100%;
+}
+
 .hero-content h1 {
     font-family: var(--fonte-titulo);
-    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-size: clamp(2.4rem, 7vw, 4.8rem);
     letter-spacing: 10px;
     text-align: center;
+    color: var(--branco);
+    line-height: 1.15;
+    margin-bottom: 0;
+    text-shadow: 0 4px 25px rgba(0,0,0,0.7);
 }
 
 .btn-ouca {
-    display: block;
-    width: fit-content;
-    margin: 30px auto 0;
-    padding: 12px 45px;
+    display: inline-block;
+    margin: 28px auto 0;
+    padding: 12px 42px;
     border: 1px solid var(--branco);
-    color: var(--branco);
+    color: var(--branco) !important;
     border-radius: 50px;
     text-transform: uppercase;
     font-size: 0.8rem;
+    font-weight: 600;
     letter-spacing: 3px;
     transition: 0.4s;
+    backdrop-filter: blur(4px);
 }
 
 .btn-ouca:hover {
     background: var(--branco);
-    color: var(--preto);
+    color: var(--preto) !important;
+    transform: translateY(-2px);
+}
+
+/* --- DETALHE DISCRETO DE LANÇAMENTO (CARD COMPACTO) --- */
+.card-teaser-compacto {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(14, 14, 14, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 6px 14px 6px 8px;
+    border-radius: 100px;
+    margin-top: 32px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+    transition: border-color 0.3s ease, background 0.3s ease;
+    max-width: 530px;
+}
+
+.card-teaser-compacto:hover {
+    border-color: rgba(197, 160, 89, 0.4);
+    background: rgba(18, 18, 18, 0.85);
+}
+
+.teaser-thumb-wrapper {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #000;
+}
+
+.teaser-thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.75;
+    filter: brightness(0.68) saturate(0.85);
+    transform: scale(1.05);
+}
+
+.teaser-info-compacto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 2px;
+    flex: 1 1 auto;
+}
+
+.teaser-linha-titulo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.teaser-chamada-txt {
+    color: var(--branco);
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+.teaser-data-txt {
+    color: var(--dourado);
+    font-weight: 600;
+    font-size: 0.76rem;
+    letter-spacing: 0.8px;
+}
+
+.contador-minimalista {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    color: #a0a0a0;
+    letter-spacing: 0.8px;
+}
+
+.contador-item strong {
+    color: var(--branco);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.contador-sep {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.link-teaser-novidades {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 6px;
+    padding: 6px 8px;
+    color: var(--dourado) !important;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.link-teaser-novidades:hover {
+    color: var(--branco) !important;
+    transform: translateX(2px);
+}
+
+.link-teaser-novidades i {
+    font-size: 0.7rem;
+    transition: transform 0.2s ease;
+}
+
+.link-teaser-novidades:hover i {
+    transform: translateX(3px);
 }
 
 /* ==========================================================================
@@ -356,38 +498,141 @@ a {
     padding: 20px 0;
 }
 
-/* --- CARD CTA PROJETO (HOME) --- */
-.cta-overlay {
-    flex-direction: column;
-    text-align: center;
+/* --- CARD SUSPENSE LANÇAMENTO (DISCOGRAFIA) --- */
+.card-lancamento-suspense {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #0d0d0d;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.card-lancamento-suspense:hover {
+    transform: translateY(-4px);
+    border-color: rgba(197, 160, 89, 0.35);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.card-lancamento-suspense .capa-wrapper {
+    background: #050505;
+    position: relative;
+}
+
+.capa-teaser-discografia {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.8;
+    filter: brightness(0.7) saturate(0.85);
+    transition: transform 0.6s ease, filter 0.6s ease, opacity 0.6s ease;
+}
+
+.card-lancamento-suspense:hover .capa-teaser-discografia {
+    transform: scale(1.03);
+    opacity: 0.88;
+    filter: brightness(0.74) saturate(0.9);
+}
+
+.overlay-teaser-discografia {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.4) 100%);
+    pointer-events: none;
+}
+
+.overlay-hover-teaser {
     background: rgba(0, 0, 0, 0.85) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-.status-projeto {
-    color: var(--dourado);
-    font-size: 0.7rem;
-    font-weight: bold;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
+.btn-overlay-teaser {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: var(--branco) !important;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: var(--transition);
 }
 
-.btn-quero-fazer-parte {
+.btn-overlay-teaser:hover {
     background: var(--dourado);
+    border-color: var(--dourado);
     color: #000 !important;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-family: var(--fonte-impacto);
-    font-size: 1.2rem;
-    line-height: 1.1;
-    text-align: center;
-    display: inline-block;
-    width: 90%;
-    transition: 0.3s;
+    transform: translateY(-2px);
 }
 
-.btn-quero-fazer-parte:hover {
-    background: #fff;
-    transform: scale(1.05);
+.btn-overlay-teaser i {
+    font-size: 0.72rem;
+}
+
+.info-teaser-musica {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px 20px 22px;
+}
+
+.info-musica:not(.info-teaser-musica) {
+    padding: 18px 20px 22px;
+}
+
+.tag-em-breve {
+    display: inline-block;
+    color: var(--dourado);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+}
+
+.data-teaser-musica {
+    color: var(--dourado);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 2px 0 8px;
+}
+
+.texto-teaser-curto {
+    color: #999999;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    margin-bottom: 14px;
+}
+
+.cta-teaser-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--branco);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 4px 0;
+    transition: var(--transition);
+}
+
+.cta-teaser-link i {
+    color: var(--dourado);
+    font-size: 0.72rem;
+    transition: transform 0.2s ease;
+}
+
+.cta-teaser-link:hover {
+    color: var(--dourado-claro);
+}
+
+.cta-teaser-link:hover i {
+    transform: translateX(4px);
 }
 
 /* --- EVENTOS (DNJ) --- */
@@ -519,7 +764,7 @@ a {
 .card-agenda {
     display: flex;
     align-items: stretch; /* Faz o lado do texto ter a mesma altura da imagem */
-    max-height: 450px; /* Limita a altura total da seção no Desktop */
+    min-height: 450px; /* Garante uma altura mínima */
     background: #0f0f0f;
     border-radius: 20px;
     overflow: hidden;
@@ -1124,6 +1369,77 @@ a {
     transform: translateY(0);
 }
 
+.data-evento {
+    border-right: 2px solid var(--dourado);
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+}
+
+.data-evento .dia {
+    font-family: var(--fonte-impacto);
+    font-size: 2.5rem;
+    color: var(--dourado);
+    line-height: 1;
+    display: block;
+}
+
+.data-evento .mes {
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
+.info-evento {
+    flex: 1;
+    text-align: left;
+    padding: 0 30px;
+}
+
+.info-evento h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 8px;
+    font-family: var(--fonte-titulos);
+}
+
+.info-evento p {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-evento i {
+    color: var(--dourado);
+    width: 15px;
+    text-align: center;
+}
+
+.status-evento {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge-agenda {
+    border: 1px solid var(--dourado);
+    color: var(--dourado);
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
 /* CORREÇÃO DO BOTÃO: Texto e Fundo */
 #btn-carregar-agenda {
     background: transparent;
@@ -1163,13 +1479,21 @@ a {
         gap: 15px;
     }
     .data-evento {
-        border-right: none !important;
+        border-right: none;
         border-bottom: 2px solid var(--dourado);
-        padding: 0 0 10px 0 !important;
+        padding: 0 0 15px 0;
         width: 100%;
+        min-width: auto;
     }
     .info-evento {
-        padding: 0 !important;
+        padding: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .info-evento p {
+        justify-content: center;
     }
 }
 
@@ -1200,4 +1524,58 @@ a {
         opacity: 1;
         transform: translateY(0);
     }
+
+    /* Hero Responsivo */
+    .hero-content h1 {
+        font-size: clamp(2rem, 6vw, 3.8rem);
+        letter-spacing: 6px;
+    }
 }
+
+@media (max-width: 680px) {
+    .hero-content h1 {
+        font-size: 2.1rem;
+        letter-spacing: 4px;
+    }
+
+    .btn-ouca {
+        margin-top: 22px;
+        padding: 10px 32px;
+        font-size: 0.75rem;
+    }
+
+    .card-teaser-compacto {
+        border-radius: 16px;
+        flex-direction: column;
+        padding: 12px 14px;
+        gap: 8px;
+        margin-top: 24px;
+        width: 100%;
+        max-width: 290px;
+        text-align: center;
+    }
+
+    .teaser-info-compacto {
+        align-items: center;
+        text-align: center;
+    }
+
+    .teaser-linha-titulo {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .contador-minimalista {
+        justify-content: center;
+        font-size: 0.7rem;
+    }
+
+    .link-teaser-novidades {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        padding: 8px 12px;
+        font-size: 0.74rem;
+    }
+}
+

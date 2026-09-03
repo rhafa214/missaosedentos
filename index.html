@@ -35,11 +35,12 @@
             <a href="#sobre" class="menu-link">SOBRE NÓS</a>
             <a href="#trabalhos" class="menu-link">TRABALHOS</a>
             <a href="#dnj" class="menu-link">EVENTOS</a>
+            <a href="#agenda" class="menu-link">AGENDA</a>
             <a href="#contato" class="menu-link">CONTATO</a>
         </nav>
     </div>
 
-    <!-- HEADER / HERO -->
+    <!-- HEADER / HERO PRINCIPAL COM ESTÉTICA INSTITUCIONAL -->
     <header class="hero" id="inicio">
         <nav class="top-bar">
             <div class="social-icons">
@@ -65,6 +66,31 @@
         <div class="hero-content">
             <h1>MISSÃO SEDENTOS</h1>
             <a href="#trabalhos" class="btn-ouca">Ouça Agora</a>
+
+            <!-- DETALHE DISCRETO DE LANÇAMENTO / MODO EXPECTATIVA -->
+            <div class="card-teaser-compacto" id="card-teaser-compacto">
+                <div class="teaser-thumb-wrapper">
+                    <img src="img/capa-teaser.png" alt="Arte misteriosa do novo lançamento" class="teaser-thumb-img">
+                </div>
+                <div class="teaser-info-compacto">
+                    <div class="teaser-linha-titulo">
+                        <span class="teaser-chamada-txt">Uma novidade está chegando</span>
+                        <span class="teaser-data-txt">· 18.09.2026</span>
+                    </div>
+                    <!-- CONTADOR MINIMALISTA (DIAS · HORAS · MIN) -->
+                    <div class="contador-minimalista" id="contador-lancamento" aria-label="Contagem regressiva para o lançamento">
+                        <span class="contador-item"><strong id="tempo-dias">00</strong> DIAS</span>
+                        <span class="contador-sep">·</span>
+                        <span class="contador-item"><strong id="tempo-horas">00</strong> HORAS</span>
+                        <span class="contador-sep">·</span>
+                        <span class="contador-item"><strong id="tempo-minutos">00</strong> MIN</span>
+                    </div>
+                </div>
+                <a href="https://instagram.com/missaosedentos_" target="_blank" class="link-teaser-novidades" aria-label="Acompanhar novidades">
+                    <span>Acompanhar novidades</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -107,9 +133,9 @@
                         <img src="img/arte.png" alt="Single Sedento">
                         <div class="streaming-overlay">
                             <div class="streaming-links">
-                                <a href="https://open.spotify.com/intl-pt/artist/7rFSEkoNPMpgkBk8CTjwFu" target="_blank"><i class="fab fa-spotify"></i></a>
-                                <a href="https://music.apple.com/br/song/sedento/1744020324" target="_blank"><i class="fab fa-apple"></i></a>
-                                <a href="https://www.youtube.com/@MissaoSedentos" target="_blank"><i class="fab fa-youtube"></i></a>
+                                <a href="https://open.spotify.com/intl-pt/artist/7rFSEkoNPMpgkBk8CTjwFu" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                                <a href="https://music.apple.com/br/song/sedento/1744020324" target="_blank" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
+                                <a href="https://www.youtube.com/@MissaoSedentos" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
@@ -125,9 +151,9 @@
                         <img src="img/tu es a noiva.jpg" alt="Tu és a Noiva">
                         <div class="streaming-overlay">
                             <div class="streaming-links">
-                                <a href="https://open.spotify.com/intl-pt/track/10igvkHl4OTUhQMFBgaJtb" target="_blank"><i class="fab fa-spotify"></i></a>
-                                <a href="https://music.apple.com/br/album/tu-%C3%A9s-a-noiva-single/1819285134" target="_blank"><i class="fab fa-apple"></i></a>
-                                <a href="https://youtu.be/hVh0d63lmmY" target="_blank"><i class="fab fa-youtube"></i></a>
+                                <a href="https://open.spotify.com/intl-pt/track/10igvkHl4OTUhQMFBgaJtb" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                                <a href="https://music.apple.com/br/album/tu-%C3%A9s-a-noiva-single/1819285134" target="_blank" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
+                                <a href="https://youtu.be/hVh0d63lmmY" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
@@ -137,23 +163,27 @@
                     </div>
                 </div>
 
-                <!-- CARD: NOVO PROJETO CTA -->
-                <div class="card-musica-pro cta-projeto-card">
+                <!-- CARD: PRÓXIMO LANÇAMENTO (EM BREVE) -->
+                <div class="card-musica-pro card-lancamento-suspense">
                     <div class="capa-wrapper">
-                        <img src="img/foto-estudio.jpg" alt="Novo Projeto Estúdio">
-                        <div class="streaming-overlay cta-overlay">
-                            <div class="cta-card-content">
-                                <span class="status-projeto">EM PRODUÇÃO</span>
-                                 <!-- Alterado: Link para WhatsApp em vez da página de projeto -->
-                <a href="https://wa.me/5515996919075?text=olá%20quero%20ajudar%20com%20o%20próximo%20lançamento" target="_blank" class="btn-quero-fazer-parte">
-                    QUERO FAZER PARTE <br> DESSE PROJETO
-                </a>
-                            </div>
+                        <img src="img/capa-teaser.png" alt="Arte misteriosa do novo lançamento" class="capa-teaser-discografia">
+                        <div class="overlay-teaser-discografia"></div>
+                        <div class="streaming-overlay overlay-hover-teaser">
+                            <a href="https://instagram.com/missaosedentos_" target="_blank" class="btn-overlay-teaser" aria-label="Acompanhar novidades no Instagram">
+                                <span>Acompanhar novidades</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
-                    <div class="info-musica">
-                        <h3>PRÓXIMO LANÇAMENTO</h3>
-                        <p>Projetos 2026</p>
+                    <div class="info-musica info-teaser-musica">
+                        <span class="tag-em-breve">EM BREVE</span>
+                        <h3>UMA NOVA CANÇÃO</h3>
+                        <p class="data-teaser-musica">18.09.2026</p>
+                        <p class="texto-teaser-curto">Ainda não podemos contar tudo.<br>Mas falta pouco.</p>
+                        <a href="https://instagram.com/missaosedentos_" target="_blank" class="cta-teaser-link" aria-label="Acompanhar novidades">
+                            <span>Acompanhar novidades</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>

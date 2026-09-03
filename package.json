@@ -1,0 +1,14 @@
+{
+  "name": "missaosedentos",
+  "version": "1.0.0",
+  "description": "Missão Sedentos",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "echo \"No build required\"",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
