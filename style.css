@@ -528,22 +528,17 @@ a {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    opacity: 0.8;
-    filter: brightness(0.7) saturate(0.85);
-    transition: transform 0.6s ease, filter 0.6s ease, opacity 0.6s ease;
+    opacity: 1;
+    filter: none;
+    transition: transform 0.6s ease;
 }
 
 .card-lancamento-suspense:hover .capa-teaser-discografia {
-    transform: scale(1.03);
-    opacity: 0.88;
-    filter: brightness(0.74) saturate(0.9);
+    transform: scale(1.04);
 }
 
 .overlay-teaser-discografia {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.4) 100%);
-    pointer-events: none;
+    display: none;
 }
 
 .overlay-hover-teaser {
