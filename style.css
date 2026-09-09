@@ -541,38 +541,52 @@ a {
     display: none;
 }
 
-.overlay-hover-teaser {
-    background: rgba(0, 0, 0, 0.85) !important;
+.overlay-hover-presave {
+    background: rgba(0, 0, 0, 0.62) !important;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
 
-.btn-overlay-teaser {
+.btn-overlay-presave {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 22px;
+    padding: 11px 24px;
     border-radius: 50px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: var(--branco) !important;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    transition: var(--transition);
-}
-
-.btn-overlay-teaser:hover {
     background: var(--dourado);
-    border-color: var(--dourado);
-    color: #000 !important;
-    transform: translateY(-2px);
+    border: 1px solid var(--dourado);
+    color: #050505 !important;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: var(--transition);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
 }
 
-.btn-overlay-teaser i {
+.btn-overlay-presave:hover,
+.btn-overlay-presave:focus-visible {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #000000 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+    outline: none;
+}
+
+.btn-overlay-presave i {
     font-size: 0.72rem;
+    transition: transform 0.2s ease;
+}
+
+.btn-overlay-presave:hover i {
+    transform: translateX(3px);
 }
 
 .info-teaser-musica {
@@ -611,30 +625,37 @@ a {
     margin-bottom: 14px;
 }
 
-.cta-teaser-link {
+.cta-presave-card {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: var(--branco);
+    color: var(--dourado) !important;
     font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
     padding: 4px 0;
     transition: var(--transition);
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.cta-teaser-link i {
+.cta-presave-card i {
     color: var(--dourado);
     font-size: 0.72rem;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.cta-teaser-link:hover {
-    color: var(--dourado-claro);
+.cta-presave-card:hover,
+.cta-presave-card:focus-visible {
+    color: var(--branco) !important;
+    transform: translateX(3px);
+    outline: none;
 }
 
-.cta-teaser-link:hover i {
-    transform: translateX(4px);
+.cta-presave-card:hover i {
+    color: var(--branco);
+    transform: translateX(3px);
 }
 
 /* --- EVENTOS (DNJ) --- */
@@ -1601,6 +1622,25 @@ a {
         border-top: 1px solid rgba(255, 255, 255, 0.08);
         width: 100%;
         font-size: 0.74rem;
+    }
+
+    /* Botão de Pré-save no Mobile (Discografia) */
+    .cta-presave-card {
+        width: 100%;
+        min-height: 44px;
+        padding: 12px 18px;
+        border-radius: 6px;
+        background: rgba(197, 160, 89, 0.12);
+        border: 1px solid var(--dourado);
+        color: var(--dourado) !important;
+        margin-top: 6px;
+        box-sizing: border-box;
+        justify-content: center;
+    }
+
+    .cta-presave-card:active {
+        background: var(--dourado);
+        color: #000000 !important;
     }
 }
 
