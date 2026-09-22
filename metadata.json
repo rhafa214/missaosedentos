@@ -1,6 +1,6 @@
 {
   "name": "Missão Sedentos",
-  "description": "Site oficial da Missão Sedentos com modo suspense para o próximo lançamento musical, contagem regressiva e discografia.",
+  "description": "Site oficial da Missão Sedentos com destaque para o lançamento oficial do single Quebranta-me e discografia.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

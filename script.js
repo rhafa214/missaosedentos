@@ -1,44 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 0. CONTADOR REGRESSIVO DO PRÓXIMO LANÇAMENTO (MODO EXPECTATIVA DISCRETO) ---
-    const elementoDias = document.getElementById('tempo-dias');
-    const elementoHoras = document.getElementById('tempo-horas');
-    const elementoMinutos = document.getElementById('tempo-minutos');
-    const elementoSegundos = document.getElementById('tempo-segundos');
-
-    if (elementoDias && elementoHoras && elementoMinutos) {
-        // Data alvo do próximo lançamento (18 de Setembro de 2026 às 00:00 Horário de Brasília)
-        const dataAlvo = new Date("2026-09-18T00:00:00-03:00").getTime();
-
-        function atualizarContador() {
-            const agora = new Date().getTime();
-            const diferenca = dataAlvo - agora;
-
-            if (diferenca <= 0) {
-                elementoDias.textContent = "00";
-                elementoHoras.textContent = "00";
-                elementoMinutos.textContent = "00";
-                if (elementoSegundos) elementoSegundos.textContent = "00";
-                const chamada = document.querySelector('.teaser-chamada-txt');
-                if (chamada) chamada.textContent = "Lançamento Disponível";
-                return;
-            }
-
-            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
-            const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
-
-            elementoDias.textContent = String(dias).padStart(2, '0');
-            elementoHoras.textContent = String(horas).padStart(2, '0');
-            elementoMinutos.textContent = String(minutos).padStart(2, '0');
-            if (elementoSegundos) elementoSegundos.textContent = String(segundos).padStart(2, '0');
-        }
-
-        atualizarContador();
-        setInterval(atualizarContador, 1000);
-    }
-
     // --- 1. LÓGICA DO MENU LATERAL ---
     const menuOverlay = document.getElementById('menu-overlay');
     const btnOpen = document.getElementById('open-menu');
